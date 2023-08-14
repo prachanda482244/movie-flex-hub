@@ -1,11 +1,12 @@
 import React from 'react'
-import { useGlobalContext } from '../Hooks/GlobalHooks'
+import Movies from './Movies'
+import Search from './Search'
 
 const Home = () => {
-    const name = useGlobalContext()
     return (
         <div>
-            home {name}
+            <Search />
+            <Movies />
         </div>
     )
 }
