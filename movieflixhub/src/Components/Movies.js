@@ -15,7 +15,6 @@ const Movies = () => {
                                 <h2 className='text-center '>{Title.length <= 20 ? Title : Title.slice(0, 20)}</h2>
                                 <img src={Poster} alt="Poster" />
                             </div>
-
                         </div>
                     </NavLink>
                 })}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
 export const AppContext = React.createContext();
-const API_URL = `http://www.omdbapi.com/?i=tt3896198&apikey=e1825798&s=titanic`
+const API_URL = `http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.REACT_APP_APIKEY}&s=titanic`
 export const AppProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true)
     const [movies, setMovies] = useState([])
