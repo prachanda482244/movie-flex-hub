@@ -26,3 +26,6 @@
 .card-info:hover h2 {
   @apply transform -translate-y-5 animate-pulse;
 }
+.search-section {
+  @apply border-2 flex flex-col items-center justify-center py-2;
+}

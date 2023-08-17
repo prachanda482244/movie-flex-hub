@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
 export const AppContext = React.createContext();
-const API_URL = `http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.REACT_APP_APIKEY}&s=titanic`
+const API_URL = `http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.REACT_APP_APIKEY}`
 export const AppProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true)
     const [movies, setMovies] = useState([])
     const [isError, setIsError] = useState({ show: false, msg: '' })
+    const [query, setQuery] = useState('titanic')
+
     const getMovies = async (url) => {
         try {
             const { data } = await axios({
@@ -26,7 +28,7 @@ export const AppProvider = ({ children }) => {
         }
     }
     useEffect(() => {
-        getMovies(API_URL)
-    }, [])
-    return <AppContext.Provider value={{ isLoading, isError, movies }}>{children}</AppContext.Provider>
+        getMovies(`${API_URL}&s=${query}`)
+    }, [query])
+    return <AppContext.Provider value={{ isLoading, isError, movies, query, setQuery }}>{children}</AppContext.Provider>
 }
