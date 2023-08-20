@@ -8,17 +8,17 @@
   box-sizing: border-box;
 }
 .movie-page {
-  @apply border-2 p-5;
+  @apply border-2 border-purple-700 p-5 bg-slate-900 text-white;
 }
 .card {
-  @apply border-2 border-slate-800 rounded-lg py-5 px-10 sm:w-80 md:w-auto sm:mx-auto  h-96 flex items-center transition-all  ease-in-out justify-center;
+  @apply border-2 border-slate-300 rounded-lg py-5 px-10 sm:w-80 md:w-auto sm:mx-auto  h-96 flex items-center transition-all  ease-in-out justify-center;
 }
 
 .card-info img {
   @apply h-56 w-56;
 }
 .card:hover {
-  @apply bg-slate-600 text-slate-100;
+  @apply bg-gradient-to-r from-violet-500 to-fuchsia-500 text-cyan-300;
 }
 .card-info:hover img {
   @apply transform scale-110;
@@ -27,5 +27,11 @@
   @apply transform -translate-y-5 animate-pulse;
 }
 .search-section {
-  @apply border-2 flex flex-col items-center justify-center py-2;
+  @apply bg-gradient-to-r from-sky-500 to-purple-700  flex flex-col gap-3 items-center justify-center py-2;
+}
+.search-section h2 {
+  @apply px-3 py-2 font-sans text-lg tracking-wider w-full text-center uppercase text-white rounded-lg;
+}
+.search-item input {
+  @apply border-2 w-full py-2 px-4 rounded-full focus:outline-purple-800 text-center font-light tracking-wide capitalize;
 }

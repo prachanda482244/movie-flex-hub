@@ -2,9 +2,10 @@ import React from 'react'
 import { useGlobalContext } from '../Hooks/GlobalHooks'
 import { NavLink } from 'react-router-dom'
 const Movies = () => {
-    const { movies } = useGlobalContext()
+    const { movies, query } = useGlobalContext()
     return (
         <section className='movie-page'>
+            <h2 className='text-center text-2xl py-3 uppercase'>{query} movies</h2>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-4 py-2'>
 
                 {movies?.map((movie, id) => {
