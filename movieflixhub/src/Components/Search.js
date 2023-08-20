@@ -12,7 +12,7 @@ const Search = () => {
                 </div>
             </form>
             <div className='card-error'>
-                <p>
+                <p className='h-6'>
                     {isError.show && isError.msg}
                 </p>
             </div>

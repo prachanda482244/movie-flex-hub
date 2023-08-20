@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
     const [query, setQuery] = useState('titanic')
 
     const getMovies = async (url) => {
+        setIsLoading(true)
         try {
             const { data } = await axios({
                 url: url,
@@ -18,10 +19,10 @@ export const AppProvider = ({ children }) => {
             console.log(data)
             if (data.Response === 'True') {
                 setIsLoading(false)
+                setIsError({ show: false, msg: '' })
                 setMovies(data.Search)
             } else {
-                setIsError({ show: true, msg: data.error })
-
+                setIsError({ show: true, msg: data.Error })
             }
         } catch (error) {
             console.log(error.message)

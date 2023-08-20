@@ -35,3 +35,6 @@
 .search-item input {
   @apply border-2 w-full py-2 px-4 rounded-full focus:outline-purple-800 text-center font-light tracking-wide capitalize;
 }
+.card-error p {
+  @apply rounded-full uppercase font-semibold text-red-600;
+}
