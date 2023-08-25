@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Work+Sans:wght@300&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,34 +8,170 @@
   padding: 0;
   box-sizing: border-box;
 }
-.movie-page {
-  @apply border-2 border-purple-700 p-5 bg-slate-900 text-white;
+html {
+  background-color: black;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
-.card {
-  @apply border-2 border-slate-300 rounded-lg py-5 px-10 sm:w-80 md:w-auto sm:mx-auto  h-96 flex items-center transition-all  ease-in-out justify-center;
+.posterImage {
+  @apply h-[600px];
+}
+.posterImage img {
+  @apply m-auto block w-[100%];
+}
+.posterImage_overlay {
+  @apply absolute p-20 bottom-0 h-[70%] flex flex-col w-[100%] justify-end items-start;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.posterImage__overlay:hover {
+  opacity: 1;
+}
+.posterImage__title {
+  @apply font-black  mb-4;
+}
+.posterImage__runtime {
+  @apply text-lg mb-4;
+}
+.posterImage__rating {
+  @apply ml-12;
+}
+.posterImage__description {
+  @apply text-lg mb-1 flex text-left md:w-[50%];
+}
+.cards__overlay {
+  @apply absolute bottom-0  h-[290px] flex flex-col  justify-end sm:opacity-100 md:opacity-0;
+  padding: 0 1rem 1rem 1rem;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+  transition: opacity 0.2s;
+}
+.cards__overlay:hover {
+  opacity: 1;
+}
+.cards {
+  @apply inline-block  relative overflow-hidden rounded-xl m-1 cursor-pointer md:h-[300px] md:w-[250px] z-0;
+  border: 1px solid rgb(99, 99, 99);
+  min-width: 200px;
+  transition: transform 0.2s;
+}
+.cards:hover {
+  @apply transform scale-[1.2] z-50;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.card-info img {
-  @apply h-56 w-56;
+.movie {
+  @apply flex flex-col items-center relative w-[100%];
 }
-.card:hover {
-  @apply bg-gradient-to-r from-violet-500 to-fuchsia-500 text-cyan-300;
+
+.movie__intro {
+  @apply sm:w-[100%] md:w-[90%];
 }
-.card-info:hover img {
-  @apply transform scale-110;
+
+.movie__backdrop {
+  @apply w-full h-[500px] object-cover;
+  object-position: 0 35%;
 }
-.card-info:hover h2 {
-  @apply transform -translate-y-5 animate-pulse;
+
+.movie__detail {
+  @apply items-center md:w-3/4 sm:w-[100%] flex relative bottom-64;
 }
-.search-section {
-  @apply bg-gradient-to-r from-sky-500 to-purple-700  flex flex-col gap-3 items-center justify-center py-2;
+
+.movie__poster {
+  @apply w-[350px] rounded-lg;
+  box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
 }
-.search-section h2 {
-  @apply px-3 py-2 font-sans text-lg tracking-wider w-full text-center uppercase text-white rounded-lg;
+
+.movie__detailRight {
+  @apply flex flex-col justify-between h-[450px] text-white;
 }
-.search-item input {
-  @apply border-2 w-full py-2 px-4 rounded-full focus:outline-purple-800 text-center font-light tracking-wide capitalize;
+
+.movie__detailRightTop > div {
+  text-shadow: 0px 0px 5px #000000;
+  margin-bottom: 0.5rem;
 }
-.card-error p {
-  @apply rounded-full uppercase font-semibold text-red-600;
+
+.movie__name {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.movie__voteCount {
+  margin-left: 1rem;
+}
+
+.movie__genres {
+  margin: 1.25rem 0;
+}
+
+.movie__genre {
+  padding: 0.5rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+.movie__detailRightBottom {
+  margin: 2rem 0;
+  flex: 0.8;
+}
+
+.synopsisText {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.synopsisText > div:last-of-type {
+  margin-left: auto;
+}
+
+.movie__links {
+  @apply flex  items-center relative justify-between bottom-[120px] md:w-3/4 sm:w-[90vw];
+}
+
+.movie__heading {
+  @apply md:text-2xl sm:text-lg;
+}
+
+.movie__Button {
+  @apply flex justify-center items-center rounded-xl cursor-pointer w-[150px] text-black font-bold;
+  padding: 0.8rem 2rem;
+}
+
+.movie__homeButton {
+  background-color: rgb(255, 0, 0);
+}
+
+.movie__imdbButton {
+  background-color: #f3ce13;
+}
+
+.newTab {
+  margin-left: 1.4rem;
+}
+
+.movie__production {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.movie__productionComapany {
+  width: 200px;
+  margin: 2rem;
+}
+
+.productionCompanyImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
